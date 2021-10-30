@@ -10,7 +10,7 @@ const intialState = {
 const todos = (state = intialState, action) => {
   switch (action.type) {
     default:
-      return state;
+      return state.todos;
   }
 };
 
