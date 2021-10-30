@@ -6,6 +6,7 @@ const Addtodo = () => {
   const [value, setValue] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
+    setValue("");
   };
 
   const handleInput = (e) => {
@@ -17,6 +18,7 @@ const Addtodo = () => {
         <FormControl>
           <Input
             type="text"
+            value={value}
             onChange={handleInput}
             borderTopRadius={0}
             borderBottomRightRadius={0}
