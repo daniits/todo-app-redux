@@ -1,7 +1,6 @@
 import { Checkbox } from "@chakra-ui/checkbox";
 import { Text } from "@chakra-ui/layout";
 import { Box } from "@chakra-ui/layout";
-import React from "react";
 import { useState } from "react";
 
 const Todo = ({ todo }) => {
@@ -9,7 +8,7 @@ const Todo = ({ todo }) => {
   return (
     <Box mb={1} bgColor="lightgreen" p={2}>
       <Checkbox colorScheme="teal" isChecked={cheked}>
-        <Text>{todo.content}</Text>
+        <Text as={todo.compeleted && "del"}>{todo.content}</Text>
       </Checkbox>
     </Box>
   );
