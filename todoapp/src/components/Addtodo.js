@@ -1,21 +1,21 @@
-import { Button, Flex, FormControl, Input } from "@chakra-ui/react";
+import { Button, Flex, FormControl, Input } from "@chakra-ui/react"
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addTodo } from "../redux/actions";
 
-const AddTodo = () => {
+export const AddTodo = () => {
   const dispatch = useDispatch();
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = e => {
     e.preventDefault();
     dispatch(addTodo(value));
-    setValue("");
-  };
+    setValue('');
+  }
 
-  const handleInput = (e) => {
+  const handleInput = e => {
     setValue(e.target.value);
-  };
+  }
 
   return (
     <form onSubmit={handleSubmit}>
@@ -35,12 +35,8 @@ const AddTodo = () => {
           disabled={!value}
           borderTopLeftRadius={0}
           borderBottomLeftRadius={0}
-        >
-          Add Todo
-        </Button>
+        >Add Todo</Button>
       </Flex>
     </form>
-  );
-};
-
-export default AddTodo;
+  )
+}
